@@ -5,8 +5,9 @@ codestates-bithumb-frontend Project
 ### 완성된 GIF 파일 및 배포 링크
 
 ### 프로젝트 실행 방법
-1. node_module 설치 (npm install) 
-2. 프로젝트 실행 (npm start) 
+1. clent 폴더 이동
+2. node_module 설치 (npm install) 
+3. 프로젝트 실행 (npm start) 
 
 ### 사용한 스택 목록
 - javascript
