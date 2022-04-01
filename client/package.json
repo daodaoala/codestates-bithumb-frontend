@@ -2,7 +2,7 @@
   "name": "codestates-bithumb-frontend",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://daodaoala.github.io/codestates-bithumb-frontend/",
+  "homepage": ".",
   "dependencies": {
     "@babel/plugin-transform-classes": "^7.16.7",
     "@emotion/react": "^11.8.2",
