@@ -19,7 +19,7 @@ codestates-bithumb-frontend Project
 - 헤더 구현 
     - 헤더 hover & click 이벤트
     - 로고 홈 화면 이동 구현
-    - 언어 select 구현
+    - 언어 select ui 구현
 
 - 본문 
     - 체결내역 데이터 조회 리스트 구현 (시간/가격/직전시세와 비교 처리)
