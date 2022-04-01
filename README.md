@@ -4,6 +4,8 @@ codestates-bithumb-frontend Project
 
 ### 완성된 GIF 파일 및 배포 링크
 
+배포 링크 : https://codestates-bithumb-frontend.herokuapp.com/
+
 ### 프로젝트 실행 방법
 1. clent 폴더 이동
 2. node_module 설치 (npm install) 
