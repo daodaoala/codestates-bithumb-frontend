@@ -7,11 +7,6 @@ const app = express();
 // path 모듈 불러오기
 const path = require('path');
 
-// 미들웨어 함수를 특정 경로에 등록
-app.use('/api/data', function(req, res) {
-    res.json({ greeting: 'Hello World' });
-});
-
 // 기본 포트를 app 객체에 설정
 const port = process.env.PORT || 3000;
 app.listen(port);
