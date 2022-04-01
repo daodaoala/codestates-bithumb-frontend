@@ -3,6 +3,7 @@ codestates-bithumb-frontend Project
 
 
 ### 완성된 GIF 파일 및 배포 링크
+<img src="https://hnet.com/video-to-gif/viewimage/20220331-22-CpMJX25Uclr9RcC6-R1CRLc-HNET">
 
 배포 링크 : https://codestates-bithumb-frontend.herokuapp.com/
 
