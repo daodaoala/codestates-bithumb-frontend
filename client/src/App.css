@@ -16,6 +16,9 @@ a {
 .color_blu {
   color: #4386F9 !important;
 }
+.color_whi {
+  color: #FFFFFF !important;
+}
 .title{
   font-size: 28px;
   font-weight: 700;
@@ -163,6 +166,30 @@ a {
 .scroll-head {
   overflow-y: auto;
 }
+.footerBar{
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 0px;
+  z-index: 0;
+  width: 100%;
+}
+.footerTitle{
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  color:#FFFFFF !important;
+}
+.footerInfo{
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  color:#7C7F84 !important;
+  margin: 3px 0 !important;
+}
+.footerInfo1{
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  color:#FFFFFF !important;
+  margin: 3px 0 !important;
+}
 #root .MuiTableCell-root{
   font-size: 11px;
   padding: 0;
@@ -186,4 +213,7 @@ a {
 }
 #root .MuiTabPanel-root {
   padding: 0px;
+}
+.footerBar.MuiAppBar-root {
+  background-color: #242A32;
 }
