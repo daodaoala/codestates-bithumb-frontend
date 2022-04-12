@@ -61,7 +61,7 @@ function App() {
         <div></div>
         <MenuHeader />   
         <Section />
-        {/* <MenuFooter /> */}
+        <MenuFooter />
       </Router>
     </ThemeProvider>
    </>

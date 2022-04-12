@@ -7,7 +7,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
-    appBar: {
+    footerBar: {
         position: 'absolute',
         bottom:0,
         marginBottom: '0px',
@@ -36,7 +36,7 @@ const MenuFooter = () => {
     
     return (
         <>
-        <AppBar position="static" className={cls.appBar} >
+        <AppBar position="static" className={cls.footerBar} >
           <Container>
             <Box display="flex" justifyContent="space-around"style={{margin:"55px 50px 20px"}}>
                 <Box>

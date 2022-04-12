@@ -168,9 +168,9 @@ const CoinInfo = () => {
                 <Grid container spacing={1}>
                     <Grid item xs={4} md={3}>
                         <Box className='info_con'>
-                            <span className="current_price">{price}</span>
+                            <span className={clsx(chgRate > 0 ? "color_red":"color_blu","current_price")}>{price}</span>
 
-                            <span className={clsx(chgRate > 0 ? "info_hd":"info_hd_minus")}> {chgRate}% </span>   
+                            <span className={clsx(chgRate > 0 ? "info_hd":"info_hd_minus")}>{chgRate}% </span>   
                         </Box>
                         <Box className='tb_List'>
                             <Box className='tb_List_L'>
