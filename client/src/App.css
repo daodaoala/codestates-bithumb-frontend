@@ -67,13 +67,24 @@ a {
 .info_hd {
   position: relative;
   display: inline-block;
-  margin: 6px 0 10px 10px;
+  margin: 8px 0 10px 10px;
   padding: 0 8px;
   height: 20px;
   line-height: 20px;
   border-radius: 3px;
   color: #fff;
   background-color: #f75467 !important;
+}
+.info_hd_minus {
+  position: relative;
+  display: inline-block;
+  margin: 6px 0 10px 10px;
+  padding: 0 8px;
+  height: 20px;
+  line-height: 20px;
+  border-radius: 3px;
+  color: #fff;
+  background-color: #4386F9 !important;
 }
 .tb_List {
   width: 360px;

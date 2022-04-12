@@ -7,9 +7,7 @@ import Grid from '@mui/material/Grid';
 import CoinInfo from './CoinInfo';
 
 const useStyles = makeStyles((theme) => ({
-    root:{
 
-    }
 }));
 
 const Main = () => {

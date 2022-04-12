@@ -82,8 +82,8 @@ const CoinInfo = () => {
             setHighPrice(data.content.highPrice.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,'))
             setLowPrice(data.content.lowPrice.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,'))
             setPrevClosePrice(data.content.prevClosePrice.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,'))
-            setValuePrice(data.content.value.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,').substr(0,5))
-            setVolume(data.content.volume.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,').substr(0,9))
+            setValuePrice(data.content.value.substr(0,5).replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,'))
+            setVolume(data.content.volume.substr(0,10).replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,'))
             setChgRate(data.content.chgRate)
             lineHighData.push(data.content.highPrice)
             lineLowData.push(data.content.lowPrice)
@@ -96,17 +96,10 @@ const CoinInfo = () => {
         labels: ["00:00","01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00","24:00"],
         datasets: [
           {
-            label: "고가(당일)",
-            data: lineHighData,
+            label: "시가",
+            data: startPrice,
             fill: false,
-            backgroundColor: "rgba(75,192,192,0.2)",
-            borderColor: "rgba(75,192,192,1)"
-          },
-          {
-            label: "저가(당일)",
-            data: lineLowData,
-            fill: false,
-            borderColor: "#742774"
+            borderColor: "blue"
           },
           {
             label: "종가",
@@ -115,11 +108,18 @@ const CoinInfo = () => {
             borderColor: "orange"
           },
           {
-            label: "시가",
-            data: startPrice,
+            label: "저가(당일)",
+            data: lineLowData,
             fill: false,
-            borderColor: "blue"
-          }
+            borderColor: "#742774"
+          },
+          {
+            label: "고가(당일)",
+            data: lineHighData,
+            fill: false,
+            backgroundColor: "rgba(75,192,192,0.2)",
+            borderColor: "rgba(75,192,192,1)"
+          },
         ]
     };
 
@@ -169,7 +169,8 @@ const CoinInfo = () => {
                     <Grid item xs={4} md={3}>
                         <Box className='info_con'>
                             <span className="current_price">{price}</span>
-                            <span className="info_hd"> {chgRate}% </span>   
+
+                            <span className={clsx(chgRate > 0 ? "info_hd":"info_hd_minus")}> {chgRate}% </span>   
                         </Box>
                         <Box className='tb_List'>
                             <Box className='tb_List_L'>
@@ -178,7 +179,7 @@ const CoinInfo = () => {
                                     <p>거래금액(24H)</p>
                                     <p>체결강도</p>
                                 </Box>
-                                <Box>
+                                <Box style={{textAlign:"right"}}>
                                     <p className={clsx('color_bla','bold')}>{volume} BTC</p>
                                     <p className={clsx('color_bla','bold')}>{valuePrice} 억</p>
                                     <p className={clsx('color_red','bold')}>{volumePower}%</p>
