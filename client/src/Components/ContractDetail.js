@@ -85,11 +85,11 @@ const ContractDetail = () => {
             <Table stickyHeader aria-label="sticky table" size="small">
                 <TableHead>
                     <TableRow>
-                        <TableCell align="left">시간</TableCell>
-                        <TableCell align="center">종류</TableCell>
-                        <TableCell align="center">가격(KRW)</TableCell>
-                        <TableCell align="center">수량(BTC)</TableCell>
-                        <TableCell align="center">체결금액</TableCell>
+                        <TableCell className="tableHeader" align="left">시간</TableCell>
+                        <TableCell className="tableHeader" align="center">종류</TableCell>
+                        <TableCell className="tableHeader" align="right">가격(KRW)</TableCell>
+                        <TableCell className="tableHeader" align="right">수량(BTC)</TableCell>
+                        <TableCell className="tableHeader" align="right">체결금액</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
@@ -103,19 +103,19 @@ const ContractDetail = () => {
                                 <TableCell component="th" align="center">
                                     {o.buySellGb && getValue(o.buySellGb,'Fastening type')}
                                 </TableCell>
-                                <TableCell component="th" size="small" align="center" >
+                                <TableCell component="th" size="small" align="right" >
                                     {o.contPrice && getValue(o.contPrice, 'price')}
                                 </TableCell>
                                 {o.updn !== "dn" ? (
-                                    <TableCell component="th" size="small" align="center" className="color_blu" >
+                                    <TableCell component="th" size="small" align="right" className="color_blu" >
                                         <b>{o.contQty} BTC</b>
                                     </TableCell>
                                 ):(
-                                    <TableCell component="th" size="small" align="center" className="color_red" >
+                                    <TableCell component="th" size="small" align="right" className="color_red" >
                                        <b>{o.contQty} BTC</b>
                                     </TableCell>
                                 )}
-                                <TableCell component="th" align="center">
+                                <TableCell component="th" align="right">
                                     {o.contAmt && getValue(o.contAmt, 'Amt')}
                                 </TableCell>
                             </TableRow>

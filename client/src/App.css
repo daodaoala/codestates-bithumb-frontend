@@ -192,6 +192,11 @@ a {
   margin: 3px 0 !important;
   cursor: pointer;
 }
+.tableHeader{
+  color:#a4a4a4 !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+}
 #root .MuiTableCell-root{
   font-size: 11px;
   padding: 0;

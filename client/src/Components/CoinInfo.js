@@ -148,7 +148,7 @@ const CoinInfo = () => {
             display: false,
           },
         },
-      };
+    };
 
     return (
         <Box sx={{ flexGrow: 1 }}>
@@ -169,8 +169,10 @@ const CoinInfo = () => {
                     <Grid item xs={4} md={3}>
                         <Box className='info_con'>
                             <span className={clsx(chgRate > 0 ? "color_red":"color_blu","current_price")}>{price}</span>
-
-                            <span className={clsx(chgRate > 0 ? "info_hd":"info_hd_minus")}>{chgRate}% </span>   
+                            {chgRate > 0 ?
+                                <span className="info_hd">+{chgRate}% </span> :
+                                <span className="info_hd_minus">{chgRate}% </span>  
+                            }   
                         </Box>
                         <Box className='tb_List'>
                             <Box className='tb_List_L'>
