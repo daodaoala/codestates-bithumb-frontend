@@ -183,12 +183,14 @@ a {
   font-weight: 600 !important;
   color:#7C7F84 !important;
   margin: 3px 0 !important;
+  cursor: pointer;
 }
 .footerInfo1{
   font-size: 12px !important;
   font-weight: 700 !important;
   color:#FFFFFF !important;
   margin: 3px 0 !important;
+  cursor: pointer;
 }
 #root .MuiTableCell-root{
   font-size: 11px;

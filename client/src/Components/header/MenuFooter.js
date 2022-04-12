@@ -41,7 +41,7 @@ const MenuFooter = () => {
                   <Box className="footerInfo">제보 채널 : <b className='color_whi'>whistle@bithumbcorp.com</b></Box>
                   <Box className="footerInfo">고객센터 :   서울특별시 서초구 강남대로 489 이니셜타워1 1~2층 (지번 : 반포동 737-10)<br/>
                                                         운영시간 : 평일 오전 10시 00분 ~ 오후 6시 00분 (토,일 공휴일 제외)</Box>
-                  <Box className="footerInfo">카카오톡 상담 : @빗썸(챗봇 상담)</Box>
+                  <Box className="footerInfo">카카오톡 상담 : <b className='color_whi'>@빗썸(챗봇 상담)</b></Box>
                 </Box>   
             </Box>
           </Container>

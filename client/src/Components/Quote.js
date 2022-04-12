@@ -27,7 +27,7 @@ const Quote = () => {
     const cls = useStyles();
     const [socketConnected, setSocketConnected] = useState(false);
     const [sendMsg, setSendMsg] = useState(false);
-    const [quoteList, setQuoteList] = useState([]);
+    const [quoteList, setQuoteList] = useState([]); //호가 데이터 리스트
     const webSocketUrl = `wss://pubwss.bithumb.com/pub/ws`;
     let ws = useRef(null);
 
@@ -85,6 +85,7 @@ const Quote = () => {
                     <TableRow>
                         <TableCell align="center"><b>가격(KRW)</b></TableCell>
                         <TableCell align="center"><b>수량(BTC)</b></TableCell>
+                        <TableCell align="center"><b>건수</b></TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody className="scroll-head">
@@ -99,6 +100,9 @@ const Quote = () => {
                                             </TableCell>
                                             <TableCell component="th" size="small" align="center" >
                                                 {o.quantity}
+                                            </TableCell>
+                                            <TableCell component="th" size="small" align="center" >
+                                                {o.total}
                                             </TableCell>
                                         </>
                                     )}
