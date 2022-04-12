@@ -63,13 +63,17 @@ const ContractDetail = () => {
         }};
     }, [sendMsg])
 
-    // Field 유형에 따라 값 형식표시
+    // 유형에 따라 값 형식표시
     const getValue = (value, type) => {
         try {
             if( type === 'Fastening type') {
                 return value === '1' ? '매도' : '매수'
             } else if (type === 'price') {
                 return value.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,')
+            } else if (type === 'time') {
+                return value.substring(11, 19)
+            } else if (type === 'Amt') {
+                return parseFloat(value).toFixed(2)
             }
         }catch (e) {
             return '';
@@ -81,8 +85,8 @@ const ContractDetail = () => {
             <Table stickyHeader aria-label="sticky table" size="small">
                 <TableHead>
                     <TableRow>
-                        {/* <TableCell align="center">시간</TableCell> */}
-                        <TableCell align="center">체결종류</TableCell>
+                        <TableCell align="left">시간</TableCell>
+                        <TableCell align="center">종류</TableCell>
                         <TableCell align="center">가격(KRW)</TableCell>
                         <TableCell align="center">수량(BTC)</TableCell>
                         <TableCell align="center">체결금액</TableCell>
@@ -93,9 +97,9 @@ const ContractDetail = () => {
                         <>
                         {i>1 && row.content.list.map((o,j) => (
                             <TableRow key={o.id}>
-                                {/* <TableCell component="th" align="center">
-                                    {o.contDtm}
-                                </TableCell> */}
+                                <TableCell component="th" align="left">
+                                    {o.contDtm && getValue(o.contDtm,'time')}
+                                </TableCell>
                                 <TableCell component="th" align="center">
                                     {o.buySellGb && getValue(o.buySellGb,'Fastening type')}
                                 </TableCell>
@@ -112,7 +116,7 @@ const ContractDetail = () => {
                                     </TableCell>
                                 )}
                                 <TableCell component="th" align="center">
-                                    {o.contAmt}
+                                    {o.contAmt && getValue(o.contAmt, 'Amt')}
                                 </TableCell>
                             </TableRow>
                         ))}

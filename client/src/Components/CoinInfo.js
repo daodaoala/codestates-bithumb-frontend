@@ -34,63 +34,63 @@ const CoinInfo = () => {
     let ws = useRef(null);
   
     // 소켓 객체 생성
-    // useEffect(() => {
-    //   if (!ws.current) {
-    //     ws.current = new WebSocket(webSocketUrl);
-    //     ws.current.onopen = () => {
-    //       console.log("connected to " + webSocketUrl);
-    //       setSocketConnected(true);
-    //     };
-    //     ws.current.onclose = (error) => {
-    //       console.log("disconnect from " + webSocketUrl);
-    //       console.log(error);
-    //     };
-    //     ws.current.onerror = (error) => {
-    //       console.log("connection error " + webSocketUrl);
-    //       console.log(error);
-    //     };
-    //   }
-    //   return () => {
-    //     console.log("clean up");
-    //     ws.current.close();
-    //   };
-    // }, []);
+    useEffect(() => {
+      if (!ws.current) {
+        ws.current = new WebSocket(webSocketUrl);
+        ws.current.onopen = () => {
+          console.log("connected to " + webSocketUrl);
+          setSocketConnected(true);
+        };
+        ws.current.onclose = (error) => {
+          console.log("disconnect from " + webSocketUrl);
+          console.log(error);
+        };
+        ws.current.onerror = (error) => {
+          console.log("connection error " + webSocketUrl);
+          console.log(error);
+        };
+      }
+      return () => {
+        console.log("clean up");
+        ws.current.close();
+      };
+    }, []);
   
-    // // 소켓이 연결되었을 시에 send 메소드
-    // useEffect(() => {
-    //     if (socketConnected) {
-    //     ws.current.send(
-    //         JSON.stringify({
-    //             type: "ticker",
-    //             symbols: [ "BTC_KRW" ],
-    //             tickTypes: [ "1H" ],
-    //         }),
-    //     );
-    //     setSendMsg(true);
-    //     }
-    // }, [socketConnected]);
+    // 소켓이 연결되었을 시에 send 메소드
+    useEffect(() => {
+        if (socketConnected) {
+        ws.current.send(
+            JSON.stringify({
+                type: "ticker",
+                symbols: [ "BTC_KRW" ],
+                tickTypes: [ "1H" ],
+            }),
+        );
+        setSendMsg(true);
+        }
+    }, [socketConnected]);
 
-    // // send 후에 onmessage로 데이터 가져오기
-    // useEffect(() => {
-    //     if (sendMsg) {
-    //     ws.current.onmessage = (evt) => {
-    //         const data = JSON.parse(evt.data);
-    //         console.log("data",data)
-    //         setItems((prevItems) => [...prevItems, data]);
-    //         setPrice(data.content.openPrice.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,'))
-    //         setVolumePower(data.content.volumePower)
-    //         setHighPrice(data.content.highPrice.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,'))
-    //         setLowPrice(data.content.lowPrice.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,'))
-    //         setPrevClosePrice(data.content.prevClosePrice.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,'))
-    //         setValuePrice(data.content.value.substr(0,5).replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,'))
-    //         setVolume(data.content.volume.substr(0,10).replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,'))
-    //         setChgRate(data.content.chgRate)
-    //         lineHighData.push(data.content.highPrice)
-    //         lineLowData.push(data.content.lowPrice)
-    //         closePrice.push(data.content.closePrice)
-    //         startPrice.push(data.content.openPrice)
-    //     }};
-    // }, [sendMsg])
+    // send 후에 onmessage로 데이터 가져오기
+    useEffect(() => {
+        if (sendMsg) {
+        ws.current.onmessage = (evt) => {
+            const data = JSON.parse(evt.data);
+            console.log("data",data)
+            setItems((prevItems) => [...prevItems, data]);
+            setPrice(data.content.openPrice.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,'))
+            setVolumePower(data.content.volumePower)
+            setHighPrice(data.content.highPrice.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,'))
+            setLowPrice(data.content.lowPrice.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,'))
+            setPrevClosePrice(data.content.prevClosePrice.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,'))
+            setValuePrice(data.content.value.substr(0,5).replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,'))
+            setVolume(data.content.volume.substr(0,10).replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,'))
+            setChgRate(data.content.chgRate)
+            lineHighData.push(data.content.highPrice)
+            lineLowData.push(data.content.lowPrice)
+            closePrice.push(data.content.closePrice)
+            startPrice.push(data.content.openPrice)
+        }};
+    }, [sendMsg])
 
     const data = {
         labels: ["00:00","01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00","24:00"],
