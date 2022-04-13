@@ -1,3 +1,6 @@
+.root {
+  font-family: 'Spoqa Han Sans Neo',Roboto,"Noto Sans KR",Arial,"Malgun Gothic",sans-serif;
+}
 a {
   text-decoration: none;
 }
@@ -165,6 +168,19 @@ a {
 }
 .scroll-head {
   overflow-y: auto;
+}
+::-webkit-scrollbar {
+  width: 4px;
+  height: 20%;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #dddddd;
+  border-radius: 15px;
+}
+::-webkit-scrollbar-track {
+  background-color: #f8f8f8;
+  border-radius: 15px;
+  width: 4px;
 }
 .footerBar{
   position: absolute;

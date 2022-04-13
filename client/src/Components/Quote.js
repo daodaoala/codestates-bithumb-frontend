@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-const Quote = () => {
+const Quote = ({openPrice}) => {
     const cls = useStyles();
     const [socketConnected, setSocketConnected] = useState(false);
     const [sendMsg, setSendMsg] = useState(false);
@@ -52,31 +52,41 @@ const Quote = () => {
           console.log("clean up");
           ws.current.close();
         };
-      }, []);
+    }, []);
     
-      // 소켓이 연결되었을 시에 send 메소드
-      useEffect(() => {
-          if (socketConnected) {
-          ws.current.send(
+    // 소켓이 연결되었을 시에 send 메소드
+    useEffect(() => {
+        if (socketConnected) {
+            ws.current.send(
               JSON.stringify({
                   type: "orderbookdepth",
                   symbols: [ "BTC_KRW" ],
               }),
-          );
-          setSendMsg(true);
-          }
-      }, [socketConnected]);
+            );
+        setSendMsg(true);
+        }
+    }, [socketConnected]);
   
-      // send 후에 onmessage로 데이터 가져오기
-      useEffect(() => {
-          if (sendMsg) {
-          ws.current.onmessage = (evt) => {
+    // send 후에 onmessage로 데이터 가져오기
+    useEffect(() => {
+        if (sendMsg) {
+            ws.current.onmessage = (evt) => {
               const data = JSON.parse(evt.data);
               console.log(data);
               setQuoteList((prevItems) => [...prevItems, data]);
-          }};
-      }, [sendMsg])
+        }};
+    }, [sendMsg])
   
+    // 유형에 따라 값 형식표시
+    const getValue = (value, type) => {
+        try {
+            if( type === 'price') {
+                return value.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,')
+            }
+        }catch (e) {
+            return '';
+        }
+    }
     return (
         <Box className={cls.root} ml="130px">
           <TableContainer className="scroll-head" sx={{ maxHeight: 700, maxWidth: 360 }}>
@@ -84,8 +94,8 @@ const Quote = () => {
                 <TableHead>
                     <TableRow>
                         <TableCell align="center"><b>가격(KRW)</b></TableCell>
-                        <TableCell align="center"><b>수량(BTC)</b></TableCell>
                         <TableCell align="center"><b>건수</b></TableCell>
+                        <TableCell align="right" style={{padding:"0 8px"}}><b>수량(BTC)</b></TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody className="scroll-head">
@@ -95,14 +105,14 @@ const Quote = () => {
                                 <TableRow key={o.id}>
                                     {o.quantity !== "0" && (
                                         <>
-                                           <TableCell component="th" align="center" className="color_blu">
-                                                <b>{o.price}</b>
-                                            </TableCell>
-                                            <TableCell component="th" size="small" align="center" >
-                                                {o.quantity}
+                                           <TableCell component="th" align="center" className={clsx(openPrice > o.price ? "color_blu" : "color_red")}>
+                                                <b>{o.price && getValue(o.price, 'price')}</b>
                                             </TableCell>
                                             <TableCell component="th" size="small" align="center" >
                                                 {o.total}
+                                            </TableCell>
+                                            <TableCell component="th" size="small" align="right" style={{padding:"0 8px"}} >
+                                                {o.quantity}
                                             </TableCell>
                                         </>
                                     )}

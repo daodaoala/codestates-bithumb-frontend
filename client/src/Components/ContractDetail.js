@@ -74,6 +74,8 @@ const ContractDetail = () => {
                 return value.substring(11, 19)
             } else if (type === 'Amt') {
                 return parseFloat(value).toFixed(2)
+            } else if (type === 'Qty') {
+                return parseFloat(value).toFixed(4)
             }
         }catch (e) {
             return '';
@@ -85,11 +87,11 @@ const ContractDetail = () => {
             <Table stickyHeader aria-label="sticky table" size="small">
                 <TableHead>
                     <TableRow>
-                        <TableCell className="tableHeader" align="left">시간</TableCell>
+                        <TableCell className="tableHeader" align="left" style={{padding:"0 8px"}}>시간</TableCell>
                         <TableCell className="tableHeader" align="center">종류</TableCell>
                         <TableCell className="tableHeader" align="right">가격(KRW)</TableCell>
                         <TableCell className="tableHeader" align="right">수량(BTC)</TableCell>
-                        <TableCell className="tableHeader" align="right">체결금액</TableCell>
+                        <TableCell className="tableHeader" align="right" style={{padding:"0 8px"}}>체결금액</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
@@ -97,7 +99,7 @@ const ContractDetail = () => {
                         <>
                         {i>1 && row.content.list.map((o,j) => (
                             <TableRow key={o.id}>
-                                <TableCell component="th" align="left">
+                                <TableCell component="th" align="left" style={{padding:"0 8px"}}>
                                     {o.contDtm && getValue(o.contDtm,'time')}
                                 </TableCell>
                                 <TableCell component="th" align="center">
@@ -108,14 +110,14 @@ const ContractDetail = () => {
                                 </TableCell>
                                 {o.updn !== "dn" ? (
                                     <TableCell component="th" size="small" align="right" className="color_blu" >
-                                        <b>{o.contQty} BTC</b>
+                                        <b>{o.contQty && getValue(o.contQty, 'Qty')} BTC</b>
                                     </TableCell>
                                 ):(
                                     <TableCell component="th" size="small" align="right" className="color_red" >
-                                       <b>{o.contQty} BTC</b>
+                                       <b>{o.contQty && getValue(o.contQty, 'Qty')} BTC</b>
                                     </TableCell>
                                 )}
-                                <TableCell component="th" align="right">
+                                <TableCell component="th" align="right" style={{padding:"0 8px"}}>
                                     {o.contAmt && getValue(o.contAmt, 'Amt')}
                                 </TableCell>
                             </TableRow>

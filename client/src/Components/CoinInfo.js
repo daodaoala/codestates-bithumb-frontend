@@ -17,7 +17,7 @@ const CoinInfo = () => {
     const [value1, setValue1] = useState(3);
     const [socketConnected, setSocketConnected] = useState(false);
     const [sendMsg, setSendMsg] = useState(false);
-    const [items, setItems] = useState([]);
+    const [tickerList, setTickerList] = useState([]); //현재가 데이터 리스트
     const [price, setPrice] = useState();
     const [highPrice, setHighPrice] = useState();
     const [lowPrice, setLowPrice] = useState();
@@ -76,7 +76,7 @@ const CoinInfo = () => {
         ws.current.onmessage = (evt) => {
             const data = JSON.parse(evt.data);
             console.log("data",data)
-            setItems((prevItems) => [...prevItems, data]);
+            setTickerList((prevItems) => [...prevItems, data]);
             setPrice(data.content.openPrice.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,'))
             setVolumePower(data.content.volumePower)
             setHighPrice(data.content.highPrice.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,'))
@@ -99,44 +99,58 @@ const CoinInfo = () => {
             label: "시가",
             data: startPrice,
             fill: false,
-            borderColor: "blue"
+            borderColor: "#36A2EB"
           },
           {
             label: "종가",
             data: closePrice,
             fill: false,
-            borderColor: "orange"
+            borderColor: "#FFCD56"
           },
           {
             label: "저가(당일)",
             data: lineLowData,
             fill: false,
-            borderColor: "#742774"
+            borderColor: "#4BC0C0"
           },
           {
             label: "고가(당일)",
             data: lineHighData,
             fill: false,
-            backgroundColor: "rgba(75,192,192,0.2)",
-            borderColor: "rgba(75,192,192,1)"
+            borderColor: "red"
           },
         ]
     };
 
+    //미니차트
     const data1 = {
+        width: '360px',
+        responsive: true,
         labels: ["00:00","01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00","24:00"],
         datasets: [
           {
             label: "시가",
             data: startPrice,
             fill: true,
-            borderColor: "blue"
+            borderColor: "#8EB7F4",
+            backgroundColor:"rgba(189, 213, 249, 0.7)"
           }
         ],
-        options:{
-            legend: {
-                display: false
-            },
+        options: {
+            plugins: {
+              legend: {
+                display: false,
+                // position: "bottom",
+                // labels: {
+                //   boxWidth: 50,
+                //   color: "black",
+                //   font: {
+                //     size: 24,
+                //     weight: "bold"
+                //   }
+                // }
+              }
+            }
         }
     };
 
@@ -145,7 +159,7 @@ const CoinInfo = () => {
         responsive: true,
         plugins: {
           legend: {
-            display: false,
+            display: false, 
           },
         },
     };
@@ -211,7 +225,7 @@ const CoinInfo = () => {
                             {value===1 && (
                                 <>
                                 <Box sx={{height:"200px"}}>
-                                    <Line data={data1} options={options} />
+                                    <Line data={data1} options={options}/>
                                 </Box>
                                 <Box display="flex" sx={{ width:"360px"}}>
                                     <Box className={clsx('tab3', value1===3 && "clickedTab" )} onClick={()=>setValue1(3)}>체결내역</Box>
@@ -229,7 +243,7 @@ const CoinInfo = () => {
                     </Grid>
                     <Grid item xs={4} md={9}>
                         <Box className='arcList'>
-                            <Quote />
+                            <Quote openPrice={startPrice}/>
                         </Box>
                     </Grid>
                     <Grid item xs={4} md={9}>
