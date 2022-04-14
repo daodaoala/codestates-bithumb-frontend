@@ -8,10 +8,10 @@
 
 ### 완성된 GIF 파일 및 배포 링크
 
-![Hnet-image](https://user-images.githubusercontent.com/67010327/161239205-d724f342-790a-4587-9197-967bf1ddba3a.gif)
+<!-- ![Hnet-image](https://user-images.githubusercontent.com/67010327/161239205-d724f342-790a-4587-9197-967bf1ddba3a.gif)
 
 
-배포 링크 : https://codestates-bithumb-frontend.herokuapp.com/
+배포 링크 : https://codestates-bithumb-frontend.herokuapp.com/ -->
 
 ### 프로젝트 실행 방법
 1. client 폴더 이동
