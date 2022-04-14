@@ -3,16 +3,16 @@
 # dependencies
 /node_modules
 src/
-/Components/
+Components/
 /.pnp
 .pnp.js
 
 # testing
 /coverage
-# *.js
+*.js
 # production
 /build
-
+/src
 # misc
 .DS_Store
 .env.local
