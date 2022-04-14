@@ -127,41 +127,48 @@ const CoinInfo = () => {
         width: '360px',
         responsive: true,
         labels: ["00:00","01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00","24:00"],
-        datasets: [
-          {
-            label: "시가",
+        datasets: [{
             data: startPrice,
             fill: true,
             borderColor: "#8EB7F4",
-            backgroundColor:"rgba(189, 213, 249, 0.7)"
-          }
-        ],
-        options: {
-            plugins: {
-              legend: {
-                display: false,
-                // position: "bottom",
-                // labels: {
-                //   boxWidth: 50,
-                //   color: "black",
-                //   font: {
-                //     size: 24,
-                //     weight: "bold"
-                //   }
-                // }
-              }
-            }
-        }
+            backgroundColor:"rgba(189, 213, 249, 0.7)",
+        }],
     };
 
-    const options = {   
-        width: '360px',
-        responsive: true,
-        plugins: {
-          legend: {
-            display: false, 
-          },
-        },
+    function renderLine(data1) {   
+        return (
+            <>
+                <Line
+                    data={data1} 
+                    options={{
+                        scales: {
+                            yAxes: {
+                                grid: {
+                                    drawTicks: false
+                                },
+                                scaleLabel:{
+                                    display: false
+                                },
+                                gridLines: {
+                                    display:false,
+                                    lineWidth:0
+                                },
+                                ticks: {
+                                    display:false 
+                                }
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                display: false, 
+                            },
+                        },
+                        width: '360px',
+                        responsive: true,
+                    }}
+                />
+            </>
+        )
     };
 
     return (
@@ -225,7 +232,7 @@ const CoinInfo = () => {
                             {value===1 && (
                                 <>
                                 <Box sx={{height:"200px"}}>
-                                    <Line data={data1} options={options}/>
+                                    {renderLine( data1 )}
                                 </Box>
                                 <Box display="flex" sx={{ width:"360px"}}>
                                     <Box className={clsx('tab3', value1===3 && "clickedTab" )} onClick={()=>setValue1(3)}>체결내역</Box>
@@ -239,16 +246,12 @@ const CoinInfo = () => {
                             )}
                             {value===2 && <WorldMarket />}
                         </Paper>
-
                     </Grid>
+
+                    {/* 호가창 */}
                     <Grid item xs={4} md={9}>
                         <Box className='arcList'>
                             <Quote openPrice={startPrice}/>
-                        </Box>
-                    </Grid>
-                    <Grid item xs={4} md={9}>
-                        <Box className='buySell_con'>
-                            
                         </Box>
                     </Grid>
                 </Grid>
