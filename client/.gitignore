@@ -9,7 +9,7 @@ src/
 
 # testing
 /coverage
-*.js
+# *.js
 # production
 /build
 
