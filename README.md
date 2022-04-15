@@ -1,4 +1,4 @@
-# codestates-bithumb-frontend
+<!-- # codestates-bithumb-frontend -->
 
 빗썸에서 제공하는 Public WebSocket API를 활용해 실시간으로 빗썸 거래소에서 제공되고 있는 비트코인 정보를 보여주는 웹 앱을 구현
  - 비트코인 현재가, 호가, 체결에 대한 정보를 실시간으로 제공해주도록 구현
