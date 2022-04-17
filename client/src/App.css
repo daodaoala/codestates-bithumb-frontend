@@ -213,6 +213,103 @@ a {
   font-size: 12px !important;
   font-weight: 700 !important;
 }
+.top5_area {
+  margin-right: 20px;
+  font-size: 24px;
+  line-height: 36px;
+  font-weight: 600;
+  color: #1b1b1b;
+}
+.top5_market_tab2 {
+  padding: 0 15px;
+  line-height: 28px;
+  min-width: 60px;
+  box-sizing: border-box;
+  background-color: #eee;
+  border: 1px solid #ddd;
+  color: #777;
+  font-size: 12px;
+  height: 28px;
+  white-space: nowrap;
+  border-radius: 0 4px 4px 0;
+}
+.top5_market_tab1 {
+  padding: 0 15px;
+  line-height: 28px;
+  min-width: 60px;
+  box-sizing: border-box;
+  background-color: #eee;
+  border: 1px solid #ddd;
+  color: #777;
+  font-size: 12px;
+  height: 28px;
+  white-space: nowrap;
+  border-radius: 4px 0 0 4px;
+}
+.top5-content-wrap{
+  padding: 24px 0 0;
+  margin: 0 auto;
+  overflow: hidden;
+  width: 1200px;
+}
+.top5-list>li {
+  display: -ms-flexbox;
+  display: flex;
+  flex: 0 0 20%;
+  max-width: 20%;
+  height: 120px;
+}
+.tab_market{
+  position: relative;
+  display: inline-block;
+  margin-right: 16px;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 600;
+  padding: 12px 20px;
+  color: #777;
+  text-align: center;
+  cursor: pointer !important;
+  min-width: 70px;
+  box-sizing: border-box;
+}
+.click_tab_market{
+  position: relative;
+  display: inline-block;
+  margin-right: 16px;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 600;
+  padding: 12px 20px;
+  color: #1b1b1b;
+  text-align: center;
+  cursor: pointer !important;
+  min-width: 70px;
+  box-sizing: border-box;
+  border-bottom: 3.5px solid #1b1b1b;
+}
+/* .tab-market-search{
+  width: 260px;
+  border-radius: 15px;
+  border: 1px solid #e5e5e5;
+  background-color: #fafafa;
+  color: #1b1b1b;
+  padding-left: 39px;
+} */
+/* input.form-group-control {
+  display: block;
+  width: 260px;
+  height: 40px;
+  padding: 0 12px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 400;
+  letter-spacing: 0;
+  background-color: #f9f9f9;
+  color: #777;
+} */
 #root .MuiTableCell-root{
   font-size: 11px;
   padding: 0;
