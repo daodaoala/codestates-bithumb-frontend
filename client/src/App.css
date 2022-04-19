@@ -1,6 +1,6 @@
-.root {
-  font-family: 'Spoqa Han Sans Neo',Roboto,"Noto Sans KR",Arial,"Malgun Gothic",sans-serif;
-}
+* {
+  font-family: 'Spoqa Han Sans Neo', 'Spoqa Han Sans JP', sans-serif;
+}  
 a {
   text-decoration: none;
 }
@@ -311,6 +311,15 @@ a {
   line-height: 19px;
   border-radius: 4px;
 }
+.star_icon{
+  opacity: 0.55;
+  font-size: 20px;
+}
+.click_star_icon{
+  opacity: 1;
+  font-size: 20px; 
+  color:#FAAF00;
+}
 /* .tab-market-search{
   width: 260px;
   border-radius: 15px;
@@ -333,7 +342,7 @@ a {
   background-color: #f9f9f9;
   color: #777;
 } */
-#root .MuiTableCell-root{
+#contract_detail .MuiTableCell-root, #quote .MuiTableCell-root{
   font-size: 11px;
   padding: 0;
 }
