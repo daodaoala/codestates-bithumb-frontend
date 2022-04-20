@@ -342,6 +342,18 @@ a {
   background-color: #f9f9f9;
   color: #777;
 } */
+#market_tablehead .MuiTableCell-head, th.MuiTableCell-head {
+  background-color:#F9F9F9;
+  font-weight: bold;
+  line-height: 19px;
+  padding-right: 15px;
+  vertical-align: middle;
+  cursor: pointer;
+  color: #87818D;
+  font-size: 12px;
+  height: 50px;
+}
+
 #contract_detail .MuiTableCell-root, #quote .MuiTableCell-root{
   font-size: 11px;
   padding: 0;
