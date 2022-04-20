@@ -320,28 +320,6 @@ a {
   font-size: 20px; 
   color:#FAAF00;
 }
-/* .tab-market-search{
-  width: 260px;
-  border-radius: 15px;
-  border: 1px solid #e5e5e5;
-  background-color: #fafafa;
-  color: #1b1b1b;
-  padding-left: 39px;
-} */
-/* input.form-group-control {
-  display: block;
-  width: 260px;
-  height: 40px;
-  padding: 0 12px;
-  border: 1px solid #eee;
-  border-radius: 4px;
-  font-size: 14px;
-  line-height: 21px;
-  font-weight: 400;
-  letter-spacing: 0;
-  background-color: #f9f9f9;
-  color: #777;
-} */
 #market_tablehead .MuiTableCell-head, th.MuiTableCell-head {
   background-color:#F9F9F9;
   font-weight: bold;
