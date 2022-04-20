@@ -2,10 +2,9 @@ import React, { useState, useEffect } from 'react'
 import { ThemeProvider } from "@mui/styles";
 import { createTheme, responsiveFontSizes } from '@mui/material/styles'
 import { Navigate, BrowserRouter as Router, Routes, Link } from "react-router-dom";
-import Main from './Components/Main';
-import MenuHeader from './Components/header/MenuHeader';
-import MenuFooter from './Components/header/MenuFooter';
-import Section from './Components/Section'
+import MenuHeader from './components/header/MenuHeader';
+import MenuFooter from './components/header/MenuFooter';
+import Section from './components/Section'
 import './App.css';
 
 const theme = createTheme({
