@@ -320,6 +320,32 @@ a {
   font-size: 20px; 
   color:#FAAF00;
 }
+#change_rate .MuiOutlinedInput-input{
+  padding: 0;
+  width: 95px; 
+  height: 26px;
+}
+#change_rate .MuiOutlinedInput-input {
+  font-size: 10px;
+  line-height: 25px;
+  font-weight: 500;
+  color: #a4a4a4; 
+  text-align: left;
+  padding: 0 0 0 9px;
+}
+#change_rate .MuiMenuItem-root {
+  font-size: 12px;
+  line-height: 25px;
+  font-weight: 500;
+  color: #a4a4a4;
+}
+#table_asset .MuiTableCell-root {
+  overflow-y: auto;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  font-family: 'Spoqa Han Sans Neo', 'Spoqa Han Sans JP', sans-serif;
+}
 #market_tablehead .MuiTableCell-head, th.MuiTableCell-head {
   background-color:#F9F9F9;
   font-weight: bold;
