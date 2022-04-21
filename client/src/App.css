@@ -312,7 +312,7 @@ a {
   border-radius: 4px;
 }
 .star_icon{
-  opacity: 0.55;
+  opacity: 0.2;
   font-size: 20px;
 }
 .click_star_icon{
@@ -324,6 +324,7 @@ a {
   padding: 0;
   width: 95px; 
   height: 26px;
+  background-color: white;
 }
 #change_rate .MuiOutlinedInput-input {
   font-size: 10px;
@@ -341,10 +342,12 @@ a {
 }
 #table_asset .MuiTableCell-root {
   overflow-y: auto;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 20px;
-  font-weight: 500;
-  font-family: 'Spoqa Han Sans Neo', 'Spoqa Han Sans JP', sans-serif;
+  font-weight: 550;
+  font-family: 'Spoqa Han Sans Neo';
+  color:#444444;
+  height: 57.49px;
 }
 #market_tablehead .MuiTableCell-head, th.MuiTableCell-head {
   background-color:#F9F9F9;
