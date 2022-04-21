@@ -348,6 +348,7 @@ a {
   font-family: 'Spoqa Han Sans Neo';
   color:#444444;
   height: 57.49px;
+  align-items: center;
 }
 #market_tablehead .MuiTableCell-head, th.MuiTableCell-head {
   background-color:#F9F9F9;
