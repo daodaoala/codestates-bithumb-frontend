@@ -248,7 +248,7 @@ a {
   border-radius: 4px 0 0 4px;
 }
 .top5-content-wrap{
-  padding: 24px 0 0;
+  padding: 24px 0 30px;
   margin: 0 auto;
   overflow: hidden;
   width: 1200px;
@@ -260,13 +260,41 @@ a {
   max-width: 20%;
   height: 120px;
 }
+.top5_name {
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-overflow: ellipsis;
+  color: #444444;
+  font-family: 'Noto Sans KR', sans-serif;
+  cursor: pointer;
+}
+.top5_price {
+  margin: 5px 0 4px;
+  font-size: 28px;
+  line-height: 33px;
+  font-weight: 600;
+  letter-spacing: 0;
+  font-family: 'Roboto', sans-serif;
+  cursor: pointer;
+}
+.top5_rate {
+  border: 0 none;
+  font-size: 16px;
+  line-height: 17px;
+  font-weight: 500;
+  letter-spacing: 0;
+  font-family: 'Noto Sans KR', sans-serif;
+}
 .tab_market{
   position: relative;
   display: inline-block;
   margin-right: 16px;
   font-size: 20px;
   line-height: 30px;
-  font-weight: 600;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 500;
   padding: 12px 20px;
   color: #777;
   text-align: center;
@@ -280,6 +308,7 @@ a {
   margin-right: 16px;
   font-size: 20px;
   line-height: 30px;
+  font-family: 'Noto Sans KR', sans-serif;
   font-weight: 600;
   padding: 12px 20px;
   color: #1b1b1b;
@@ -287,7 +316,7 @@ a {
   cursor: pointer !important;
   min-width: 70px;
   box-sizing: border-box;
-  border-bottom: 3.5px solid #1b1b1b;
+  border-bottom: 3px solid #1b1b1b;
 }
 .price_head{
   display: inline-block;
@@ -344,8 +373,8 @@ a {
   overflow-y: auto;
   font-size: 15px;
   line-height: 20px;
-  font-weight: 550;
-  font-family: 'Spoqa Han Sans Neo';
+  font-weight: 500;
+  font-family: 'Noto Sans KR', sans-serif;
   color:#444444;
   height: 57.49px;
   align-items: center;
