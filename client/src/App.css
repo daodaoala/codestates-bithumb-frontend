@@ -223,21 +223,10 @@ a {
   line-height: 36px;
   font-weight: 600;
   color: #1b1b1b;
-}
-.top5_market_tab2 {
-  padding: 0 15px;
-  line-height: 28px;
-  min-width: 60px;
-  box-sizing: border-box;
-  background-color: #eee;
-  border: 1px solid #ddd;
-  color: #777;
-  font-size: 12px;
-  height: 30px;
-  white-space: nowrap;
-  border-radius: 0 4px 4px 0;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 .top5_market_tab1 {
+  margin-top: 2px;
   padding: 0 15px;
   line-height: 28px;
   min-width: 60px;
@@ -249,6 +238,29 @@ a {
   height: 30px;
   white-space: nowrap;
   border-radius: 4px 0 0 4px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 500;
+}
+.top5_market_tab2 {
+  margin-top: 2px;
+  padding: 0 15px;
+  line-height: 28px;
+  min-width: 60px;
+  box-sizing: border-box;
+  background-color: #eee;
+  border: 1px solid #ddd;
+  color: #777;
+  font-size: 12px;
+  height: 30px;
+  white-space: nowrap;
+  border-radius: 0 4px 4px 0;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 500;
+}
+.click_top5_market {
+  color: #fff;
+  background-color: #444;
+  border-color: #444;
 }
 .top5-content-wrap{
   padding: 24px 0 30px;
