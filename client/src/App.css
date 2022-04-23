@@ -188,7 +188,7 @@ a {
   margin-bottom: 0px;
   z-index: 0;
   width: 100%;
-  height: 350px;
+  height: auto;
 }
 .footerTitle{
   font-size: 13px !important;
@@ -208,6 +208,19 @@ a {
   color:#FFFFFF !important;
   margin: 3px 0 !important;
   cursor: pointer;
+}
+.footerInfo2{
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  color:#7C7F84 !important;
+  margin: 3px 0 !important;
+}
+.footerLine {
+  width: auto; 
+  height: 1px; 
+  background-color: #7C7F84; 
+  padding: 0 40px; 
+  margin: 30px 30px 10px 30px
 }
 .tableHeader{
   color:#a4a4a4 !important;
