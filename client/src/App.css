@@ -397,6 +397,9 @@ a {
   align-items: center;
   cursor: pointer;
 }
+#table_asset .MuiTableRow-root:hover {
+  background-color: #FAFAFA;
+}
 #market_tablehead .MuiTableCell-head, th.MuiTableCell-head {
   background-color:#F9F9F9;
   font-weight: bold;
