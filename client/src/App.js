@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React from 'react'
 import { ThemeProvider } from "@mui/styles";
 import { createTheme, responsiveFontSizes } from '@mui/material/styles'
 import { Navigate, BrowserRouter as Router, Routes, Link } from "react-router-dom";
@@ -53,7 +53,6 @@ const theme = createTheme({
 });
 
 function App() {
-
   return (
    <>
     <ThemeProvider theme={theme}>
