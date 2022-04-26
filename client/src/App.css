@@ -22,6 +22,12 @@ a {
 .color_whi {
   color: #FFFFFF !important;
 }
+.margin_btm_20{
+  margin-top: 20px;
+}
+.padding_lr_8 {
+  padding: 0 8px;
+}
 .title{
   font-size: 28px;
   font-weight: 700;
@@ -302,7 +308,7 @@ a {
   font-size: 28px;
   line-height: 33px;
   font-weight: 600;
-  letter-spacing: 0;
+  letter-spacing: 1px;
   font-family: 'Roboto', sans-serif;
   cursor: pointer;
 }
