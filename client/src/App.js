@@ -1,6 +1,6 @@
 import React from 'react'
 import { ThemeProvider } from "@mui/styles";
-import { createTheme, responsiveFontSizes } from '@mui/material/styles'
+import { createTheme } from '@mui/material/styles'
 import { Navigate, BrowserRouter as Router, Routes, Link } from "react-router-dom";
 import MenuHeader from './components/header/MenuHeader';
 import MenuFooter from './components/header/MenuFooter';
