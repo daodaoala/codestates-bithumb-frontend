@@ -7,6 +7,9 @@ a {
 .bold {
   font-weight: bold;
 }
+.flex {
+  display: flex;
+}
 .color_org {
   color: #ff8200 !important;
 }
