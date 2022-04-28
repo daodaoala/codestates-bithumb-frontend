@@ -105,7 +105,7 @@ const BTCMarket = ( {search} ) => {
 
     return (
         <>
-            <Loader loading={loading} />
+            {/* <Loader loading={loading} /> */}
             <Paper style={{width:"1200px" ,borderTop:"1px solid #F2F2F2", margin:"0 0 70px 0" }}>
                 <Box display="flex" p="16px 0">
                     <Box className={clsx('price_head', headValue===1 && 'click_price_head')} onClick={()=>setHeadValue(1)}>전체 {btcTickerList.length}</Box>
