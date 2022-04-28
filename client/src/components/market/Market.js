@@ -311,7 +311,7 @@ const Market = () => {
                                 ) : ( 
                                     tickerList && tickerList.map((data)=>(
                                     <>
-                                      <TableRow key="{data}">
+                                    <TableRow key="{data}">
                                             <TableCell align="left" style={{ width: "4px"}} >
                                                 <StarIcon className={clsx(favoriteIcon.includes(data.name) ? 'click_star_icon' : 'star_icon')} onClick={()=>includeFavorites(data, data.name)}/>
                                             </TableCell>
@@ -354,9 +354,22 @@ const Market = () => {
                                             <TableCell align="center" style={{ width: "5%"}}>
                                                 <SyncAltIcon style={{color:"#46C0E9", width:"18px"}}/>
                                             </TableCell>
-                                      </TableRow>
+                                    </TableRow>
                                     </>
                                 )))}
+                                {(search && searchList.length === 0) && (
+                                    <TableRow>
+                                        <TableCell align="left"></TableCell>
+                                        <TableCell align="left"></TableCell>
+                                        <TableCell align="right"></TableCell>
+                                        <TableCell align="right">해당 가상자산이 없습니다.</TableCell>
+                                        <TableCell align="left"></TableCell>
+                                        <TableCell align="center"></TableCell>
+                                        <TableCell align="center"></TableCell>
+                                        <TableCell align="center"></TableCell>
+                                        <TableCell align="center"></TableCell>
+                                    </TableRow>
+                                )}
                             </TableBody>
                         </Table>
                     </TableContainer>

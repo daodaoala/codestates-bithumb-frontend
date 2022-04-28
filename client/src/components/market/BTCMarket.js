@@ -249,6 +249,19 @@ const BTCMarket = ( {search} ) => {
                                     </TableRow>
                                 </>
                             )))}
+                            {(search && searchBTCList.length === 0) && (
+                                <TableRow>
+                                    <TableCell align="left"></TableCell>
+                                    <TableCell align="left"></TableCell>
+                                    <TableCell align="right"></TableCell>
+                                    <TableCell align="right">해당 가상자산이 없습니다.</TableCell>
+                                    <TableCell align="left"></TableCell>
+                                    <TableCell align="center"></TableCell>
+                                    <TableCell align="center"></TableCell>
+                                    <TableCell align="center"></TableCell>
+                                    <TableCell align="center"></TableCell>
+                                </TableRow>
+                            )}
                         </TableBody>
                     </Table>
                 </TableContainer>
