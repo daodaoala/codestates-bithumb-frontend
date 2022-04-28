@@ -3,11 +3,9 @@ import FadeLoader from "react-spinners/FadeLoader";
 import Box from '@material-ui/core/Box';
 
 const useStyles = makeStyles((theme) => ({
-    root: {
-        display: "flex",
-    },
     loading: {
         position: 'fixed',
+        display: "flex",
         top: '380px',
         left: '50%',
         right:'43%',

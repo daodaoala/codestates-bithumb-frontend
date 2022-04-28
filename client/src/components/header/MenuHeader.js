@@ -101,7 +101,7 @@ const MenuHeader = () => {
     return (
         <>
             <CssBaseline />
-            <AppBar position="fixed" className={cls.appBar}>
+            <AppBar className={cls.appBar}>
                 <Container className="fixed-container">
                     <Box className={cls.subToolbar} display="flex" justifyContent="flex-end">
                         <Box className={cls.subMenu}>로그인</Box>
