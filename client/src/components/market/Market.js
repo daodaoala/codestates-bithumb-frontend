@@ -79,16 +79,11 @@ const Market = () => {
     useEffect(() => {
         // localStorage.removeItem("favorite")
         const data = JSON.parse(localStorage.getItem("favorite") || "[]");
-        setFavorites(JSON.parse(localStorage.getItem("favoriteList") || "[]"))
-        // var list1 =  favorites.concat(list);
+        const list = JSON.parse(localStorage.getItem("favoriteList") || "[]")
         if (data) {
             setFavoriteIcon(data)
-            // setFavorites(favoriteIcon.filter(data => tickerList.includes(data)))
-            // setFavorites(list.filter((o) => data.includes(o.name)))
-            // favorites = favorites.concat(list)
-            // setFavorites(list1);
+            setFavorites(list.filter((o) => data.includes(o.name)))
         }
-        // console.log("list",list)
     }, [])
 
     useEffect(() => {

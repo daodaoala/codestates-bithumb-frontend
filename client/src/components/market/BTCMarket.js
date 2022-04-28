@@ -26,8 +26,8 @@ import './../../App.css';
 const BTCMarket = ( {search} ) => {
     const [headValue, setHeadValue] = useState(1);
     const [time, setTime] = useState(2);                        // 변동률 select
-    const [favorites, setFavorites] = useState([]);             // 즐겨찾기한 코인 리스트
-    const [favoriteIcon, setFavoriteIcon] = useState([]);       // 즐겨찾기 아이콘 리스트   
+    const [btcfavorites, setFavorites] = useState([]);             // 즐겨찾기한 코인 리스트
+    const [btcfavoriteIcon, setFavoriteIcon] = useState([]);       // 즐겨찾기 아이콘 리스트   
     const [searchBTCList, setSearchBTCList] = useState([]);     // BTC 마켓 검색어 리스트
     const [btcList, setBtcList] = useState([]); 
     const [btcTickerList, setBtcTickerList] = useState([]); 
@@ -73,13 +73,13 @@ const BTCMarket = ( {search} ) => {
     //즐겨찾기 추가 및 해제
     function includeFavorites( data, name ) {
         console.log("즐겨찾기", data, name)
-        if( !favoriteIcon.includes(name) ) {
-            setFavoriteIcon([...favoriteIcon, name])
-            setFavorites([...favorites, data])
+        if( !btcfavoriteIcon.includes(name) ) {
+            setFavoriteIcon([...btcfavoriteIcon, name])
+            setFavorites([...btcfavorites, data])
         }
         else {
-            setFavoriteIcon(favoriteIcon.filter(icon => icon !== name));
-            setFavorites(favorites.filter(favorites => favorites.name !== name));
+            setFavoriteIcon(btcfavoriteIcon.filter(icon => icon !== name));
+            setFavorites(btcfavorites.filter(favorites => favorites.name !== name));
         }
     }
 
@@ -142,7 +142,7 @@ const BTCMarket = ( {search} ) => {
                                 <>
                                     <TableRow key="{data}">
                                         <TableCell align="left" style={{ width: "4px"}} >
-                                            <StarIcon className={clsx(favoriteIcon.includes(data.name) ? 'click_star_icon' : 'star_icon')} onClick={()=>includeFavorites(data, data.name)}/>
+                                            <StarIcon className={clsx(btcfavoriteIcon.includes(data.name) ? 'click_star_icon' : 'star_icon')} onClick={()=>includeFavorites(data, data.name)}/>
                                         </TableCell>
                                         <TableCell align="left" onClick={()=>history.push("/trade/order/BTC_KRW")}>
                                             {data.name}
@@ -198,7 +198,7 @@ const BTCMarket = ( {search} ) => {
                                 <>
                                     <TableRow key="{data}">
                                         <TableCell align="left" style={{ width: "4px"}} >
-                                            <StarIcon className={clsx(favoriteIcon.includes(data.name) ? 'click_star_icon' : 'star_icon')} onClick={()=>includeFavorites(data, data.name)}/>
+                                            <StarIcon className={clsx(btcfavoriteIcon.includes(data.name) ? 'click_star_icon' : 'star_icon')} onClick={()=>includeFavorites(data, data.name)}/>
                                         </TableCell>
                                         <TableCell align="left" onClick={()=>history.push("/trade/order/BTC_KRW")}>
                                             {data.name}

@@ -72,7 +72,6 @@ const Top5Market = ( {tickerList} ) => {
 
     const getChangeChart = async() => {
         try {
-                // const orderCurrency = topFiveList[0].name;
                 const orderCurrency = 'GRT';
                 const paymentCurrency = 'KRW';
                 const chartIntervals = '24h';
