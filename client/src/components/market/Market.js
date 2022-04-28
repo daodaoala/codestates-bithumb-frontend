@@ -198,8 +198,8 @@ const Market = () => {
 
     return (
         <>
-            <Box>
             <Loader loading={loading} />
+            <Box>
                 <Top5Market tickerList={tickerList}/>
                 <Box display="flex" justifyContent="space-between" sx={{ width:"1200px"}}>
                     <Box>
