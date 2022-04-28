@@ -58,7 +58,6 @@ const useStyles = makeStyles((theme) => ({
         fontWeight: "bold",
         lineHeight: "12px",
         padding: "0 14px 0 12px",
-        whiteSpace:"nowrap",
         '&:hover':{
             color:"#2E2E2E",
         }

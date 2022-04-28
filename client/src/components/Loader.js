@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
         top: '380px',
         left: '50%',
         right:'43%',
-        minWidth: '140px',
+        // minWidth: '140px',
         zIndex:100
     },
 }));
