@@ -19,7 +19,7 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: `"Spoqa Han Sans Neo", "Helvetica", "Arial", sans-serif`,
+    fontFamily: `"Noto Sans KR", "Helvetica", "Arial", sans-serif`,
     fontSize: 12,
   },
   palette: {
