@@ -386,6 +386,44 @@ a {
   font-size: 20px; 
   color:#FAAF00;
 }
+.side_star_icon{
+  opacity: 0.2;
+  font-size: 12px;
+}
+.click_side_star_icon{
+  opacity: 1;
+  font-size: 12px; 
+  color:#FAAF00;
+}
+.side_tab_market {
+  position: relative;
+  display: inline-block;
+  font-size: 14px;
+  line-height: 30px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 500;
+  /* padding: 12px 20px; */
+  color: #777;
+  text-align: center;
+  cursor: pointer !important;
+  /* min-width: 70px; */
+  box-sizing: border-box;
+}
+.click_side_tab_market{
+  position: relative;
+  display: inline-block;
+  font-size: 14px;
+  line-height: 30px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 600;
+  /* padding: 12px 20px; */
+  color: #1b1b1b;
+  text-align: center;
+  cursor: pointer !important;
+  /* min-width: 70px; */
+  box-sizing: border-box;
+  border-bottom: 3px solid #1b1b1b;
+}
 #change_rate .MuiOutlinedInput-input {
   padding: 0;
   width: 95px; 
@@ -418,6 +456,21 @@ a {
 }
 #table_asset .MuiTableRow-root:hover {
   background-color: #FAFAFA;
+}
+#side_table .MuiTableCell-root {
+  font-size: 10px;
+  line-height: 20px;
+  font-weight: 600;
+  font-family: 'Noto Sans KR', sans-serif;
+  color:#444444;
+  height: 40px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+#side_table .MuiTableCell-head{
+  background-color: #FFFFFF;
+  color: #C7C7C7;
+  font-size: 12px;
 }
 #market_tablehead .MuiTableCell-head, th.MuiTableCell-head {
   background-color:#F9F9F9;

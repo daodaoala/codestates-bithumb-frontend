@@ -4,6 +4,7 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import CoinInfo from './CoinInfo';
+import SideMarket from './SideMarket'
 
 const useStyles = makeStyles((theme) => ({
     root:{
@@ -22,10 +23,10 @@ const Order = () => {
     return (
         <Box className={cls.root}>
             <Grid container spacing={1}>
-                <Grid item xs={6} md={2}>
-                    <Paper className={cls.item}></Paper>
+                <Grid item xs={5} md={4}>
+                    <SideMarket />
                 </Grid>
-                <Grid item xs={6} md={10}>
+                <Grid item xs={7} md={8}>
                     <CoinInfo />
                 </Grid>
             </Grid>

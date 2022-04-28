@@ -44,6 +44,7 @@ const useStyles = makeStyles((theme) => ({
         lineHeight: "27px",
         margin:"0 35px",
         padding: "15px 0 14px",
+        whiteSpace:"nowrap",
         '&:hover':{
             borderBottom:"4px solid #fe9601",
         }
@@ -57,6 +58,7 @@ const useStyles = makeStyles((theme) => ({
         fontWeight: "bold",
         lineHeight: "12px",
         padding: "0 14px 0 12px",
+        whiteSpace:"nowrap",
         '&:hover':{
             color:"#2E2E2E",
         }
