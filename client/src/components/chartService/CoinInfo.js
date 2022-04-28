@@ -205,7 +205,7 @@ const CoinInfo = () => {
 
     return (
         <Box sx={{ flexGrow: 1 }}>
-            <Loader loading={loading} />
+            {/* <Loader loading={loading} /> */}
             <span className="title">비트코인</span>
             <span className="w_title">BTC /KRW</span>
             <Box className="myAssets" display="flex" justifyContent="space-between">                 
