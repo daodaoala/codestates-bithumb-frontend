@@ -27,6 +27,7 @@ import VerticalAlignTopIcon from '@mui/icons-material/VerticalAlignTop';
 import CancelIcon from '@mui/icons-material/Cancel';
 import Top5Market from './Top5Market'
 import BTCMarket from './BTCMarket'
+import Loader from "./../Loader";
 import './../../App.css';
 
 const Search = styled('div')(({ theme }) => ({
@@ -62,6 +63,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 
 const Market = () => {
+    let [loading, setLoading] = useState(true);
     const [value, setValue] = useState(1);
     const [headValue, setHeadValue] = useState(1);
     const [time, setTime] = useState(2);                        // 변동률 select
@@ -78,6 +80,7 @@ const Market = () => {
 
     useEffect(() => {
         // localStorage.removeItem("favorite")
+        setLoading(true);
         const data = JSON.parse(localStorage.getItem("favorite") || "[]");
         const list = JSON.parse(localStorage.getItem("favoriteList") || "[]")
         if (data) {
@@ -123,6 +126,7 @@ const Market = () => {
         } catch (e) {
             console.log("에러", e);
         }
+        setLoading(false);
     }
   
     //객체 배열로 변환
@@ -195,6 +199,7 @@ const Market = () => {
     return (
         <>
             <Box>
+            <Loader loading={loading} />
                 <Top5Market tickerList={tickerList}/>
                 <Box display="flex" justifyContent="space-between" sx={{ width:"1200px"}}>
                     <Box>
@@ -498,3 +503,4 @@ const Market = () => {
 }
 
 export default Market;
+

@@ -20,10 +20,12 @@ import SyncAltIcon from '@mui/icons-material/SyncAlt';
 import MovingIcon from '@mui/icons-material/Moving';
 import VerticalAlignBottomIcon from '@mui/icons-material/VerticalAlignBottom';
 import VerticalAlignTopIcon from '@mui/icons-material/VerticalAlignTop';
+import Loader from "./../Loader";
 import './../../App.css';
 
 
 const BTCMarket = ( {search} ) => {
+    let [loading, setLoading] = useState(true);
     const [headValue, setHeadValue] = useState(1);
     const [time, setTime] = useState(2);                        // 변동률 select
     const [btcfavorites, setFavorites] = useState([]);             // 즐겨찾기한 코인 리스트
@@ -32,6 +34,10 @@ const BTCMarket = ( {search} ) => {
     const [btcList, setBtcList] = useState([]); 
     const [btcTickerList, setBtcTickerList] = useState([]); 
     let history = useHistory();
+
+    useEffect(() => {
+        setLoading(true);
+    }, []);
 
     useEffect(() => {
         getTickersBTC();
@@ -63,6 +69,7 @@ const BTCMarket = ( {search} ) => {
         } catch (e) {
             console.log("에러", e);
         }
+        setLoading(false);
     }
 
     //객체 배열로 변환
@@ -99,6 +106,7 @@ const BTCMarket = ( {search} ) => {
     return (
         <>
             <Paper style={{width:"1200px" ,borderTop:"1px solid #F2F2F2", margin:"0 0 70px 0" }}>
+                <Loader loading={loading} />
                 <Box display="flex" p="16px 0">
                     <Box className={clsx('price_head', headValue===1 && 'click_price_head')} onClick={()=>setHeadValue(1)}>전체 {btcTickerList.length}</Box>
                     <Box className={clsx('price_head', headValue===2 && 'click_price_head')} onClick={()=>setHeadValue(2)}>메이저 5</Box>

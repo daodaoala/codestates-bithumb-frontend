@@ -6,12 +6,14 @@ import Grid from '@mui/material/Grid';
 import ContractDetail from './ContractDetail';
 import WorldMarket from'./WorldMarket';
 import Quote from'./Quote';
+import Loader from "./../Loader";
 import './../../App.css'
 import { Chart1 as ChartJS } from 'chart.js/auto'
 import { Chart1 , Line } from "react-chartjs-2";
 
 
 const CoinInfo = () => {
+    let [loading, setLoading] = useState(true);
     const [value, setValue] = useState(1);
     const [value1, setValue1] = useState(3);
     const [socketConnected, setSocketConnected] = useState(false);
@@ -35,10 +37,12 @@ const CoinInfo = () => {
     // 소켓 객체 생성
     useEffect(() => {
       if (!ws.current) {
+        setLoading(true);
         ws.current = new WebSocket(webSocketUrl);
         ws.current.onopen = () => {
           console.log("connected to " + webSocketUrl);
           setSocketConnected(true);
+           setLoading(false);
         };
         ws.current.onclose = (error) => {
           console.log("disconnect from " + webSocketUrl);
@@ -201,6 +205,7 @@ const CoinInfo = () => {
 
     return (
         <Box sx={{ flexGrow: 1 }}>
+            <Loader loading={loading} />
             <span className="title">비트코인</span>
             <span className="w_title">BTC /KRW</span>
             <Box className="myAssets" display="flex" justifyContent="space-between">                 
