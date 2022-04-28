@@ -383,7 +383,7 @@ a {
   font-size: 20px; 
   color:#FAAF00;
 }
-#change_rate .MuiOutlinedInput-input{
+#change_rate .MuiOutlinedInput-input {
   padding: 0;
   width: 95px; 
   height: 26px;
@@ -431,10 +431,10 @@ a {
   font-size: 11px;
   padding: 0;
 }
-#root .MuiPaper-root{
+#root .MuiPaper-root {
   box-shadow:none
 }
-#root .MuiTab-root{
+#root .MuiTab-root {
   min-width: 0px;
   border-bottom: none;
   font-size: 13px;
