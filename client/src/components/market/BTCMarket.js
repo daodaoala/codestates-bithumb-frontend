@@ -68,6 +68,9 @@ const BTCMarket = ( {search} ) => {
             setBtcList(response.data.data)
         } catch (e) {
             console.log("에러", e);
+            alert(
+                "코인 정보를 가져오는 중 오류가 발생했습니다. 잠시 후 다시 시도해주세요"
+            );
         }
         setLoading(false);
     }

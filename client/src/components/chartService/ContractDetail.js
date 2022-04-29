@@ -95,7 +95,7 @@ const ContractDetail = () => {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {transaction && transaction.map((row,i) => (
+                    {transaction && transaction.slice(-35).map((row,i) => (
                         <>
                         {i>1 && row.content.list.map((o,j) => (
                             <TableRow key={o.id}>

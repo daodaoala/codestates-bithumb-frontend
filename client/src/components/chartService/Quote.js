@@ -100,7 +100,7 @@ const Quote = ({openPrice}) => {
                     </TableRow>
                 </TableHead>
                 <TableBody className="scroll-head">
-                    {quoteList && quoteList.map((row,i) => (
+                    {quoteList && quoteList.slice(-50).map((row,i) => (
                         <>
                             {i>1 && row.content.list.map((o,j) => (
                                 <TableRow key={o.id}>
