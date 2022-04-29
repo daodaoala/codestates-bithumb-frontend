@@ -69,7 +69,7 @@ const BTCMarket = ( {search} ) => {
         } catch (e) {
             console.log("에러", e);
             alert(
-                "코인 정보를 가져오는 중 오류가 발생했습니다. 잠시 후 다시 시도해주세요"
+                "코인 정보를 가져오는 중에 오류가 발생했습니다. 잠시 후 다시 시도해주시길 바랍니다"
             );
         }
         setLoading(false);
