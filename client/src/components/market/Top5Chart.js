@@ -1,11 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import clsx from 'clsx';
 import axios from 'axios';
-import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
-import Grid from '@mui/material/Grid';
-import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import { Chart1 as ChartJS } from 'chart.js/auto'
 import { Chart1 , Line } from "react-chartjs-2";
 import './../../App.css';
@@ -20,8 +14,6 @@ const Top5Chart = ( {orderCurrency, paymentCurrency} ) => {
     
     const getChart = async() => {
         try {
-                // const orderCurrency = 'GRT';
-                // const paymentCurrency = 'KRW';
                 const chartIntervals = '24h';
                 const response = await axios.get(`https://api.bithumb.com/public/candlestick/${orderCurrency}_${paymentCurrency}/${chartIntervals}`);
                 response.data.data.map((data) => (
