@@ -32,7 +32,6 @@
 - CSS
 - React
 - react-chartjs-2
-- Chart.js
 - Axios
 - RestAPI
 - WebSocket
