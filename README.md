@@ -1,5 +1,7 @@
 # codestates-bithumb-frontend
 
+중간에 누락된 커밋 내용 https://github.com/daodaoala/codestates-bithumb-frontend1 확인 가능합니다.
+
 빗썸에서 제공하는 Public WebSocket API를 활용해 실시간으로 빗썸 거래소에서 제공되고 있는 비트코인 정보를 보여주는 웹 앱을 구현하였습니다.
 <!-- 
 코인 마켓의 코인 리스트
